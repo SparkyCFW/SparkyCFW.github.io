@@ -122,7 +122,7 @@ background-position: 0 -70px;
 }
 
 .ds4 .back, .ds4 .start {
-    background: url(start.png);
+    background: url(https://sparkycfw.github.io/Bally/start.png);
     width: 28px;
     height: 46px;
     opacity: 0;
@@ -157,7 +157,7 @@ background-position: 0 -70px;
     position: absolute;
     width: 55px;
     height: 55px;
-    background: url(button.png);
+    background: url(https://sparkycfw.github.io/Bally/face.png);
 }
 
 .ds4 .button.pressed {
@@ -197,7 +197,7 @@ background-position: 0 -70px;
 
 .ds4 .stick {
     position: absolute;
-    background: url(stick.png);
+    background: url(https://sparkycfw.github.io/Bally/sticks.png);
     height: 94px;
     width: 94px;
 }
@@ -229,7 +229,7 @@ background-position: 0 -70px;
 }
 
 .ds4 .face {
-    background: url(dpad.png);
+    background: url(https://sparkycfw.github.io/Bally/dpad.png);
     position: absolute;
 }
 
