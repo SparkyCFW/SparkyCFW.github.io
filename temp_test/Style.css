@@ -1,0 +1,120 @@
+/* --- General background / shell --- */
+.gamepad {
+  position: relative;
+  width: 1920px; /* target OBS / viewer resolution */
+  height: 1080px;
+  background: url('shell.gif') no-repeat center center;
+  background-size: contain;
+}
+
+/* --- disconnected overlay --- */
+.gamepad.disconnected::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('disconnected.png') no-repeat center center;
+  background-size: contain;
+  z-index: 10;
+}
+
+/* --- Face buttons (Triangle/Circle/Cross/Square) --- */
+.face-3, .face-1, .face-2, .face-0 {
+  position: absolute;
+  width: 64px;  /* one frame width */
+  height: 64px; /* one frame height */
+  background: url('abxy.png') no-repeat;
+}
+
+/* Map sprite position for each button */
+.face-3 { background-position: 0 0;  left: 1500px; top: 400px; } /* Triangle */
+.face-3.pressed { background-position: 0 -64px; }
+
+.face-1 { background-position: -64px 0; left: 1564px; top: 450px; } /* Circle */
+.face-1.pressed { background-position: -64px -64px; }
+
+.face-2 { background-position: -192px 0; left: 1436px; top: 450px; } /* Square */
+.face-2.pressed { background-position: -192px -64px; }
+
+.face-0 { background-position: -128px 0; left: 1500px; top: 500px; } /* Cross */
+.face-0.pressed { background-position: -128px -64px; }
+
+/* --- Bumpers (L1/R1) --- */
+.l-shoulder, .r-shoulder {
+  position: absolute;
+  width: 64px; height: 64px;
+  background: url('bumpers.png') no-repeat;
+}
+
+.l-shoulder { background-position: 0 0; left: 300px; top: 200px; }
+.l-shoulder.pressed { background-position: 0 -64px; }
+
+.r-shoulder { background-position: -64px 0; left: 1500px; top: 200px; }
+.r-shoulder.pressed { background-position: -64px -64px; }
+
+/* --- Triggers (L2/R2) --- */
+.l-trigger, .r-trigger {
+  position: absolute;
+  width: 64px; height: 64px;
+  background: url('triggers.png') no-repeat;
+}
+
+.l-trigger { background-position: 0 0; left: 300px; top: 150px; }
+.l-trigger.pressed { background-position: 0 -64px; }
+
+.r-trigger { background-position: -64px 0; left: 1500px; top: 150px; }
+.r-trigger.pressed { background-position: -64px -64px; }
+
+/* --- Share / Options --- */
+.select, .start {
+  position: absolute;
+  width: 64px; height: 64px;
+  background: url('back_start.png') no-repeat;
+}
+
+.select { background-position: 0 0; left: 800px; top: 300px; }
+.select.pressed { background-position: 0 -64px; }
+
+.start { background-position: -64px 0; left: 1000px; top: 300px; }
+.start.pressed { background-position: -64px -64px; }
+
+/* --- D-Pad --- */
+.dpad-up, .dpad-down, .dpad-left, .dpad-right {
+  position: absolute;
+  width: 64px; height: 64px;
+  background: url('dpad.png') no-repeat;
+}
+
+.dpad-up { background-position: 0 0; left: 500px; top: 400px; }
+.dpad-up.pressed { background-position: 0 -64px; }
+
+.dpad-down { background-position: -64px 0; left: 500px; top: 480px; }
+.dpad-down.pressed { background-position: -64px -64px; }
+
+.dpad-left { background-position: -128px 0; left: 440px; top: 440px; }
+.dpad-left.pressed { background-position: -128px -64px; }
+
+.dpad-right { background-position: -192px 0; left: 560px; top: 440px; }
+.dpad-right.pressed { background-position: -192px -64px; }
+
+/* --- Sticks --- */
+.l-stick, .r-stick {
+  position: absolute;
+  width: 64px; height: 64px;
+  background: url('sticks.png') no-repeat;
+}
+
+.l-stick { background-position: 0 0; left: 600px; top: 600px; }
+.l-stick.pressed { background-position: 0 -64px; }
+
+.r-stick { background-position: -64px 0; left: 1300px; top: 600px; }
+.r-stick.pressed { background-position: -64px -64px; }
+
+/* --- PS button / Meta --- */
+.guide {
+  position: absolute;
+  width: 64px; height: 64px;
+  background: url('meta.png') no-repeat;
+  left: 900px; top: 500px;
+}
+.guide.pressed { background-position: 0 -64px; }
