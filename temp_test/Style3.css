@@ -35,12 +35,12 @@
   top: 0;
 }
 .custom .trigger {
-  background-position-y: -13.6896vw; /* pressed */
+  background-position-y: -13.6896vw;
   opacity: 0;
 }
 .custom .triggers::before, .custom .triggers::after {
   content: '';
-  background-position-y: -1vw; /* unpressed */
+  background-position-y: -1vw;
   z-index: -1;
 }
 .custom .trigger.left, .custom .triggers::before { left: 0; background-position-x: -1vw; }
@@ -59,17 +59,11 @@
 .custom .bumper.left { background-position-x: -1vw; width: 13.2734vw; height: 4.4238vw; left: 0; top: 0.0476vw; }
 .custom .bumper.right { background-position-x: -15.2734vw; width: 13.3356vw; height: 4.6244vw; right: 0; top: 0; }
 
-/* --- D-Pad (Fixed) --- */
-.custom .dpad {
-  position: absolute;
-  width: 16.8593vw;
-  height: 17.0337vw;
-  left: 10.2705vw;
-  top: 23.3223vw;
-}
+/* --- D-Pad (Gamepad Viewer controlled) --- */
+.custom .dpad { position: absolute; width: 16.8593vw; height: 17.0337vw; left: 10.2705vw; top: 23.3223vw; }
 .custom .face {
   position: absolute;
-  background-image: url('dpad.png'); /* fixed image URL */
+  background-image: url('dpad.png');
   background-repeat: no-repeat;
   background-size: 31.727148vw 17.604692vw;
 }
