@@ -59,21 +59,26 @@
 .custom .bumper.left { background-position-x: -1vw; width: 13.2734vw; height: 4.4238vw; left: 0; top: 0.0476vw; }
 .custom .bumper.right { background-position-x: -15.2734vw; width: 13.3356vw; height: 4.6244vw; right: 0; top: 0; }
 
-/* --- D-Pad (Updated for single element) --- */
+/* --- D-Pad (Fixed) --- */
 .custom .dpad {
   position: absolute;
   width: 16.8593vw;
   height: 17.0337vw;
   left: 10.2705vw;
   top: 23.3223vw;
-  background-image: url('dpad.png');
+}
+.custom .face {
+  position: absolute;
+  background-image: url('dpad.png'); /* fixed image URL */
   background-repeat: no-repeat;
-  background-size: 31.727148vw 17.604692vw; /* original scale from GitHub */
-  background-position: -1vw -1vw; /* unpressed */
+  background-size: 31.727148vw 17.604692vw;
 }
-.custom .dpad.pressed {
-  background-position-y: -9.3024vw; /* pressed offset matching original up/down pressed */
-}
+.custom .face.up.pressed, .custom .face.down.pressed { background-position-y: -9.3024vw; }
+.custom .face.left.pressed, .custom .face.right.pressed { background-position-y: -9.9229vw; }
+.custom .face.up { width: 6.0612vw; height: 7.3023vw; left: 5.4283vw; top: 0; background-position: -1vw -1vw; }
+.custom .face.down { width: 6.0612vw; height: 7.3023vw; left: 5.4283vw; bottom: 0; background-position: -8.0613vw -1vw; }
+.custom .face.left { width: 7.3023vw; height: 6.0612vw; left: 0; top: 5.5400vw; background-position: -15.1226vw -1.6205vw; }
+.custom .face.right { width: 7.3023vw; height: 6.0612vw; right: 0; top: 5.5400vw; background-position: -23.4249vw -1.6205vw; }
 
 /* --- Face Buttons (X, Circle, Square, Triangle) --- */
 .custom .abxy { position: absolute; width: 21.5581vw; height: 21.5230vw; left: 70.3329vw; top: 21.1210vw; }
