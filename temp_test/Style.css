@@ -1,120 +1,116 @@
-/* --- General background / shell --- */
-.gamepad {
-  position: relative;
-  width: 1920px; /* target OBS / viewer resolution */
-  height: 1080px;
-  background: url('shell.gif') no-repeat center center;
-  background-size: contain;
+/* --- Shell & Disconnected --- */
+.custom.controller, .custom.controller::after {
+  background-image: url('shell.gif');
+  background-size: 100vw auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
-
-/* --- disconnected overlay --- */
-.gamepad.disconnected::after {
+.custom.controller.disconnected {
+  opacity: 0.75;
+}
+.custom.controller.disconnected::after {
   content: '';
+  background-image: url('disconnected.png');
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('disconnected.png') no-repeat center center;
-  background-size: contain;
-  z-index: 10;
+  opacity: 0.5;
 }
 
-/* --- Face buttons (Triangle/Circle/Cross/Square) --- */
-.face-3, .face-1, .face-2, .face-0 {
+/* --- L2 & R2 (Triggers) --- */
+.custom .triggers {
   position: absolute;
-  width: 64px;  /* one frame width */
-  height: 64px; /* one frame height */
-  background: url('abxy.png') no-repeat;
+  width: 74.8782vw;
+  height: 11.6896vw;
+  left: 12.4240vw;
+  top: 0;
 }
-
-/* Map sprite position for each button */
-.face-3 { background-position: 0 0;  left: 1500px; top: 400px; } /* Triangle */
-.face-3.pressed { background-position: 0 -64px; }
-
-.face-1 { background-position: -64px 0; left: 1564px; top: 450px; } /* Circle */
-.face-1.pressed { background-position: -64px -64px; }
-
-.face-2 { background-position: -192px 0; left: 1436px; top: 450px; } /* Square */
-.face-2.pressed { background-position: -192px -64px; }
-
-.face-0 { background-position: -128px 0; left: 1500px; top: 500px; } /* Cross */
-.face-0.pressed { background-position: -128px -64px; }
-
-/* --- Bumpers (L1/R1) --- */
-.l-shoulder, .r-shoulder {
+.custom .trigger, .custom .triggers::before, .custom .triggers::after {
   position: absolute;
-  width: 64px; height: 64px;
-  background: url('bumpers.png') no-repeat;
+  background-image: url('triggers.png');
+  background-repeat: no-repeat;
+  background-size: 27.923010vw 26.379214vw;
+  width: 12.4615vw;
+  height: 11.6896vw;
+  top: 0;
 }
+.custom .trigger {
+  background-position-y: -13.6896vw; /* pressed */
+  opacity: 0;
+}
+.custom .triggers::before, .custom .triggers::after {
+  content: '';
+  background-position-y: -1vw; /* unpressed */
+  z-index: -1;
+}
+.custom .trigger.left, .custom .triggers::before { left: 0; background-position-x: -1vw; }
+.custom .trigger.right, .custom .triggers::after { right: 0; background-position-x: -14.4615vw; }
 
-.l-shoulder { background-position: 0 0; left: 300px; top: 200px; }
-.l-shoulder.pressed { background-position: 0 -64px; }
-
-.r-shoulder { background-position: -64px 0; left: 1500px; top: 200px; }
-.r-shoulder.pressed { background-position: -64px -64px; }
-
-/* --- Triggers (L2/R2) --- */
-.l-trigger, .r-trigger {
+/* --- L1 & R1 (Bumpers) --- */
+.custom .bumpers { position: absolute; width: 75.6540vw; height: 4.6244vw; left: 12.120vw; top: 12.9371vw; }
+.custom .bumper {
   position: absolute;
-  width: 64px; height: 64px;
-  background: url('triggers.png') no-repeat;
+  background-image: url('bumpers.png');
+  background-repeat: no-repeat;
+  background-size: 29.608984vw 12.248846vw;
+  background-position-y: -1vw;
 }
-
-.l-trigger { background-position: 0 0; left: 300px; top: 150px; }
-.l-trigger.pressed { background-position: 0 -64px; }
-
-.r-trigger { background-position: -64px 0; left: 1500px; top: 150px; }
-.r-trigger.pressed { background-position: -64px -64px; }
-
-/* --- Share / Options --- */
-.select, .start {
-  position: absolute;
-  width: 64px; height: 64px;
-  background: url('back_start.png') no-repeat;
-}
-
-.select { background-position: 0 0; left: 800px; top: 300px; }
-.select.pressed { background-position: 0 -64px; }
-
-.start { background-position: -64px 0; left: 1000px; top: 300px; }
-.start.pressed { background-position: -64px -64px; }
+.custom .bumper.pressed { background-position-y: -6.6244vw; }
+.custom .bumper.left { background-position-x: -1vw; width: 13.2734vw; height: 4.4238vw; left: 0; top: 0.0476vw; }
+.custom .bumper.right { background-position-x: -15.2734vw; width: 13.3356vw; height: 4.6244vw; right: 0; top: 0; }
 
 /* --- D-Pad --- */
-.dpad-up, .dpad-down, .dpad-left, .dpad-right {
+.custom .dpad { position: absolute; width: 16.8593vw; height: 17.0337vw; left: 10.2705vw; top: 23.3223vw; }
+.custom .face {
   position: absolute;
-  width: 64px; height: 64px;
-  background: url('dpad.png') no-repeat;
+  background-image: url('dpad.png');
+  background-repeat: no-repeat;
+  background-size: 31.727148vw 17.604692vw;
 }
+.custom .face.up.pressed, .custom .face.down.pressed { background-position-y: -9.3024vw; }
+.custom .face.left.pressed, .custom .face.right.pressed { background-position-y: -9.9229vw; }
 
-.dpad-up { background-position: 0 0; left: 500px; top: 400px; }
-.dpad-up.pressed { background-position: 0 -64px; }
-
-.dpad-down { background-position: -64px 0; left: 500px; top: 480px; }
-.dpad-down.pressed { background-position: -64px -64px; }
-
-.dpad-left { background-position: -128px 0; left: 440px; top: 440px; }
-.dpad-left.pressed { background-position: -128px -64px; }
-
-.dpad-right { background-position: -192px 0; left: 560px; top: 440px; }
-.dpad-right.pressed { background-position: -192px -64px; }
+/* --- Face Buttons (X, Circle, Square, Triangle) --- */
+.custom .abxy { position: absolute; width: 21.5581vw; height: 21.5230vw; left: 70.3329vw; top: 21.1210vw; }
+.custom .button {
+  position: absolute;
+  background-image: url('abxy.png');
+  background-repeat: no-repeat;
+  background-size: 32.199429vw 16.599693vw;
+  width: 6.7998vw;
+  height: 6.7998vw;
+}
+.custom .button.pressed { background-position-y: -8.7999vw; }
+.custom .a { background-position: -1vw -1vw; left: 7.4319vw; bottom: 0; }
+.custom .b { background-position: -8.7999vw -1vw; right: 0; top: 7.3264vw; }
+.custom .x { background-position: -16.5997vw -1vw; left: 0; top: 7.3264vw; }
+.custom .y { background-position: -24.3996vw -1vw; left: 7.4319vw; top: 0; }
 
 /* --- Sticks --- */
-.l-stick, .r-stick {
+.custom .sticks { position: absolute; width: 42.6867vw; height: 10.6903vw; left: 28.5515vw; top: 40.2216vw; }
+.custom .stick {
   position: absolute;
-  width: 64px; height: 64px;
-  background: url('sticks.png') no-repeat;
+  background-image: url('sticks.png');
+  background-repeat: no-repeat;
+  background-size: 24.380646vw 24.380779vw;
+  background-position-y: -1vw;
+  height: 10.6903vw;
+  width: 10.6903vw;
 }
+.custom .stick.pressed { background-position-y: -12.6905vw; }
+.custom .stick.left { background-position-x: -1vw; top: 0; left: 0; }
+.custom .stick.right { background-position-x: -12.6903vw; top: 0; left: calc(100% - 10.6903vw); }
 
-.l-stick { background-position: 0 0; left: 600px; top: 600px; }
-.l-stick.pressed { background-position: 0 -64px; }
-
-.r-stick { background-position: -64px 0; left: 1300px; top: 600px; }
-.r-stick.pressed { background-position: -64px -64px; }
-
-/* --- PS button / Meta --- */
-.guide {
+/* --- PlayStation Logo --- */
+.custom .meta {
   position: absolute;
-  width: 64px; height: 64px;
-  background: url('meta.png') no-repeat;
-  left: 900px; top: 500px;
+  width: 6.9435vw;
+  height: 5.4249vw;
+  left: 46.4426vw;
+  top: 42.0609vw;
+  background-image: url('meta.png');
+  background-repeat: no-repeat;
+  background-size: 8.943500vw 13.849788vw;
+  background-position: -1vw -1vw;
 }
-.guide.pressed { background-position: 0 -64px; }
+.custom .meta.pressed { background-position-y: -7.4249vw; }
