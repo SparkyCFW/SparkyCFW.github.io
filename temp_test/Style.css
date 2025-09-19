@@ -1,6 +1,6 @@
 /* --- Shell & Disconnected --- */
 .custom.controller, .custom.controller::after {
-  background-image: url('shell.gif');
+  background-image: url('Shell.gif');
   background-size: 100vw auto;
   background-position: left top;
   background-repeat: no-repeat;
@@ -114,3 +114,4 @@
   background-position: -1vw -1vw;
 }
 .custom .meta.pressed { background-position-y: -7.4249vw; }
+
