@@ -86,6 +86,35 @@
 .custom .x { background-position: -16.5997vw -1vw; left: 0; top: 7.3264vw; }
 .custom .y { background-position: -24.3996vw -1vw; left: 7.4319vw; top: 0; }
 
+/* --- Share & Options (Back & Start) --- */
+.custom .arrows {
+  position: absolute;
+  width: 49.6943vw;
+  height: 4.6901vw;
+  left: 25.1115vw;
+  top: 18.5723vw;
+}
+.custom .back, .custom .start {
+  position: absolute;
+  background-image: url('back_start.png');
+  background-repeat: no-repeat;
+  background-size: 8.761668vw 12.380259vw;
+  background-position-y: -1vw;
+  width: 2.8808vw;
+  height: 4.6901vw;
+}
+.custom .back {
+  background-position-x: -1vw;
+  left: 0;
+  top: 0;
+}
+.custom .start {
+  background-position-x: -4.8809vw;
+  right: 0;
+  top: 0;
+}
+.custom .back.pressed, .custom .start.pressed { background-position-y: -6.6902vw; }
+
 /* --- Sticks --- */
 .custom .sticks { position: absolute; width: 42.6867vw; height: 10.6903vw; left: 28.5515vw; top: 40.2216vw; }
 .custom .stick {
@@ -114,4 +143,3 @@
   background-position: -1vw -1vw;
 }
 .custom .meta.pressed { background-position-y: -7.4249vw; }
-
